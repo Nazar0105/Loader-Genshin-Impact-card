@@ -1,0 +1,88 @@
+/* Загальні стилі для контейнера */
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #222;
+    /* Темний фон */
+}
+
+.loader {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+    background-color: #222;
+    /* Темний фон */
+    overflow: hidden;
+    /* Приховуємо зайвий контент, який може виходити за межі контейнера */
+}
+
+/* Стилі для карток */
+.card {
+    width: 100px;
+    height: 150px;
+    margin: 0 20px;
+    /* Відстань між картами */
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 4s linear infinite;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    background-color: #222;
+    /* Темний фон для карти */
+}
+
+.card .card-front,
+.card .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+}
+
+.card.card-1 .card-front {
+    background-image: url('img/card1_front.png');
+    /* Вкажіть правильний шлях до фото для першої карти */
+}
+
+.card.card-2 .card-front {
+    background-image: url('img/card2_front.png');
+    /* Вкажіть правильний шлях до фото для другої карти */
+}
+
+.card.card-3 .card-front {
+    background-image: url('img/card3_front.png');
+    /* Вкажіть правильний шлях до фото для третьої карти */
+}
+
+.card.card-4 .card-front {
+    background-image: url('img/card4_front.png');
+    /* Вкажіть правильний шлях до фото для четвертої карти */
+}
+
+.card .card-back {
+    background-image: url('img/card_back.png');
+    transform: rotateY(180deg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /* Додайте підсвітку */
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Анімація обертання карток */
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
